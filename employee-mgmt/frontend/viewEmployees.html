@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>View Employees</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Employees</h2>
+
+<button onclick="loadEmployees()">Load Employees</button>
+
+<ul id="employeeList"></ul>
+
+<br>
+
+<a href="dashboard.html">Dashboard</a>
+
+</div>
+
+<script>
+
+function loadEmployees(){
+
+fetch("http://localhost:3000/employees")
+
+.then(res=>res.json())
+
+.then(data=>{
+
+const list=document.getElementById("employeeList")
+
+list.innerHTML=""
+
+data.forEach(e=>{
+
+const li=document.createElement("li")
+
+li.innerHTML=e.name+" - "+e.department+" - ₹"+e.salary+
+" <button onclick='deleteEmployee(\""+e._id+"\")'>Delete</button>"
+
+list.appendChild(li)
+
+})
+
+})
+
+}
+
+function deleteEmployee(id){
+
+fetch("http://localhost:3000/deleteEmployee/"+id,{
+
+method:"DELETE"
+
+})
+
+.then(res=>res.text())
+.then(data=>{
+
+alert(data)
+
+loadEmployees()
+
+})
+
+}
+
+</script>
+
+</body>
+
+</html>

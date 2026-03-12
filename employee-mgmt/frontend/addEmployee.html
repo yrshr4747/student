@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Add Employee</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Add Employee</h2>
+
+<input id="name" placeholder="Employee Name">
+<input id="department" placeholder="Department">
+<input id="salary" placeholder="Salary">
+
+<button onclick="addEmployee()">Add Employee</button>
+
+<br><br>
+
+<a href="dashboard.html">Dashboard</a>
+
+</div>
+
+<script>
+
+function addEmployee(){
+
+fetch("http://localhost:3000/addEmployee",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+name:document.getElementById("name").value,
+department:document.getElementById("department").value,
+salary:document.getElementById("salary").value
+
+})
+
+})
+
+.then(res=>res.text())
+.then(data=>alert(data))
+
+}
+
+</script>
+
+</body>
+
+</html>
