@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Add Book</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Add Book</h2>
+
+<input id="title" placeholder="Book Title">
+
+<input id="author" placeholder="Author">
+
+<input id="price" placeholder="Price">
+
+<button onclick="addBook()">Add Book</button>
+
+<br><br>
+
+<a href="viewBooks.html">View Books</a>
+
+</div>
+
+<script>
+
+function addBook(){
+
+fetch("http://localhost:3000/addBook",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+title:document.getElementById("title").value,
+author:document.getElementById("author").value,
+price:document.getElementById("price").value
+
+})
+
+})
+
+.then(res=>res.text())
+.then(data=>alert(data))
+
+}
+
+</script>
+
+</body>
+
+</html>
