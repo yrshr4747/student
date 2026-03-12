@@ -1,0 +1,82 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#f4f6f9;
+    margin:0;
+    padding:0;
+}
+
+/* Center container */
+
+.container{
+    width:350px;
+    margin:80px auto;
+    padding:30px;
+    background:white;
+    border-radius:8px;
+    box-shadow:0px 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Titles */
+
+h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#333;
+}
+
+/* Inputs */
+
+input, select, textarea{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:14px;
+}
+
+/* Button */
+
+button{
+    width:100%;
+    padding:10px;
+    background:#007bff;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:15px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+/* Links */
+
+a{
+    display:block;
+    text-align:center;
+    margin-top:15px;
+    color:#007bff;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* Assignment display */
+
+#assignments, #submissions{
+    margin-top:20px;
+    padding:10px;
+}
+
+#assignments p, #submissions p{
+    background:#f1f1f1;
+    padding:8px;
+    border-radius:4px;
+    margin:5px 0;
+}
