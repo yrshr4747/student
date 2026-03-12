@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Courses</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<h2>Courses</h2>
+
+<button onclick="loadCourses()">Load Courses</button>
+
+<ul id="courseList"></ul>
+
+<script>
+
+function loadCourses(){
+
+fetch("http://localhost:3000/courses")
+
+.then(res=>res.json())
+
+.then(data=>{
+
+const list=document.getElementById("courseList")
+
+list.innerHTML=""
+
+data.forEach(c=>{
+
+const li=document.createElement("li")
+
+li.innerText=c.email+" → "+c.course
+
+list.appendChild(li)
+
+})
+
+})
+
+}
+
+</script>
+
+</body>
+</html>

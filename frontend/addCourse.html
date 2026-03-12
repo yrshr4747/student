@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Add Course</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<h2>Add Course</h2>
+
+<input id="email" placeholder="Email">
+<input id="course" placeholder="Course">
+
+<button onclick="addCourse()">Add Course</button>
+
+<script>
+
+function addCourse(){
+
+fetch("http://localhost:3000/addCourse",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+email:document.getElementById("email").value,
+course:document.getElementById("course").value
+})
+
+})
+.then(res=>res.text())
+.then(data=>alert(data))
+
+}
+
+</script>
+
+</body>
+</html>

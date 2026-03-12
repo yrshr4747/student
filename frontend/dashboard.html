@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+text-align:center;
+}
+
+.container{
+background:white;
+width:400px;
+margin:100px auto;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+button{
+display:block;
+width:80%;
+margin:15px auto;
+padding:12px;
+border:none;
+background:#27ae60;
+color:white;
+font-size:16px;
+cursor:pointer;
+border-radius:5px;
+}
+
+button:hover{
+background:#219150;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Dashboard</h2>
+
+<button onclick="goAdd()">Add Course</button>
+
+<button onclick="goView()">View Courses</button>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+
+function goAdd(){
+window.location="addCourse.html"
+}
+
+function goView(){
+window.location="viewCourses.html"
+}
+
+function logout(){
+window.location="login.html"
+}
+
+</script>
+
+</body>
+</html>
